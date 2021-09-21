@@ -1,0 +1,29 @@
+header {
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+
+}
+
+h1 {
+    display : inline;
+    background: linear-gradient(90deg, blue, lightblue);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    display: inline;
+}
+
+h3 {
+    display: inline;
+}
+
+.menu-horizontal {
+    text-align: center;
+}
+
+#header-title {
+    margin: 10%;    
+}
