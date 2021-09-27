@@ -1,0 +1,45 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+.header-top{
+    max-width: 1200px;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left, .header-center, .header-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-menu{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(200,250,200,1);
+    
+}
+
+button.e-mail{
+    display: flex;
+    background-color: inherit;
+    align-items: center;
+    border: 0;
+}
+
+button.menu{
+    display: flex;
+    background-color: inherit;
+    border-width: 0px 1px 0px 0px;
+    border-color: rgba(245, 245, 245, 1);
+    align-items: center;
+}
+
+span.menu{
+    padding: 0px 10px 0px 10px;
+}
