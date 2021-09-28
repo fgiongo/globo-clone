@@ -58,12 +58,14 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 600px;
+    flex-grow: 1;
 }
 
 .frontpage-row-right{
     display: flex;
     justify-content: space-between;
     min-width: 600px;
+    flex-grow: 1;
 }
 
 .frontpage-spotlight{
@@ -76,25 +78,25 @@ body {
 .frontpage-jornalismo-a{
     display: flex;
     justify-content: space-between;
-    height: 200px;
 }
 
 .frontpage-jornalismo-b{
     display: flex;
     justify-content: space-between;
-    height: 200px;
 }
 
 .frontpage-esporte{
     display: flex;
     flex-direction: column;
     min-width: 300px;
+    width: 50%;
 }
 
 .frontpage-entretenimento{
     display: flex;
     flex-direction: column;
     min-width: 300px;
+    width: 50%;
 }
 
 .headline-a{
@@ -102,6 +104,7 @@ body {
     min-width: 200px;
     margin: 5px 5px 5px 5px;
     background-color: rgba(0, 0, 255, 0.2);
+    width: 33%;
 }
 
 .headline-b{
@@ -109,6 +112,7 @@ body {
     min-width: 200px;
     margin: 5px 5px 5px 5px;
     background-color: rgba(255, 0, 0, 0.2);
+    width: 33%;
 }
 
 .headline-c{
