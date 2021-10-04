@@ -127,22 +127,22 @@ img{
 
 .headline-a-img {
     display: flex;
-    flex: 2;
+    width: 300px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .headline-a-eyebrow {
     display: flex;
-    flex: 1;
 }
 
 .headline-a-text{
     display: flex;
-    flex: 1;
 }
 
 .headline-a-ul{
     display: flex;
-    flex: 1;
 }
 
 .headline-b{
