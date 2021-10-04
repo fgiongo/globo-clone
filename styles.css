@@ -10,10 +10,12 @@ h1 {
 
 h2{
     font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
 }
 
 h3{
     font-family: Helvetica, Arial, sans-serif;
+    margin: 0px;
 }
 
 img{
@@ -36,38 +38,32 @@ img{
 .header-left{
     display: flex;
     background-color: rgba(128, 128, 128, 0.5);
-    flex-grow: 1;
 }
 
 .header-center{
     display: flex;
     background-color: rgba(0, 0, 255, 0.5);
-    flex-grow: 2;
 }
 
 .header-right{
     display: flex;
     background-color: rgba(128, 128, 128, 0.5);
-    flex-grow: 1;
 }
 
 .horizontal-menu{
     display: flex;
     justify-content: space-between;
     min-height: 40px;
-    flex-grow: 1;
 }
 
 .horizontal-menu-item{
     display: flex;
-    flex-grow: 1;
     background-color: rgba(70, 240, 240, 0.5);
 }
 
 .container-frontpage{
     display: flex;
     justify-content: space-between;
-    max-height: 600px;
 }
 
 @media screen and (max-width:768px){
@@ -76,7 +72,6 @@ img{
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        flex-grow: 1;
     }
 }
 
@@ -88,14 +83,12 @@ img{
 .frontpage-row-right{
     display: flex;
     justify-content: space-between;
-    flex-grow: 1;
 }
 
 .frontpage-spotlight{
     display: flex;
     flex-direction: column;
     margin: 5px 5px 5px 5px;
-    flex-grow: 2;
     background-color: rgba(0, 0, 255, 0.2);
 }
 
@@ -110,31 +103,26 @@ ul.spotlight-bullet-points {
 .frontpage-jornalismo-a{
     display: flex;
     justify-content: space-between;
-    flex-grow: 1;
 }
 
 .frontpage-jornalismo-b{
     display: flex;
     justify-content: space-between;
-    flex-grow: 1;
 }
 
 .frontpage-esporte{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .frontpage-entretenimento{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .headline-a{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     margin: 5px 5px 5px 5px;
     background-color: rgba(0, 0, 255, 0.2);
 }
@@ -166,14 +154,12 @@ ul.spotlight-bullet-points {
 .headline-b{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     margin: 5px 5px 5px 5px;
     background-color: rgba(255, 0, 0, 0.2);
 }
 
 .headline-c{
     display: flex;
-    flex-grow: 1;
     margin: 5px 5px 5px 5px;
     background-color: rgba(145, 30, 180, 0.2);
 }
