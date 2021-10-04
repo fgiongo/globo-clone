@@ -1,1 +1,6 @@
-<img src="stock-photos/pexels-aloïs-moubax-2348817.jpg" style="object-fit: cover;">
+<img class="headline-a-img" src="stock-photos/pexels-aloïs-moubax-2348817.jpg">
+<h3 class="headline-a-eyebrow">Eyebrow key-word(s)</h3>
+<h2 class="headline-a-text">This is a journalism-related headline</h2>
+<ul class="headline-a-ui">
+    <li>This is a bullet-point linking to a related story</li>
+</ul>
