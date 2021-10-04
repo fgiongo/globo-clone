@@ -8,6 +8,14 @@ h1 {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+h2{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h3{
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 img{
     max-width: 100%;
 }
@@ -63,7 +71,7 @@ img{
 }
 
 @media screen and (max-width:768px){
-
+    
     .container-frontpage{
         display: flex;
         justify-content: space-between;
@@ -91,6 +99,14 @@ img{
     margin: 5px 5px 5px 5px;
     flex-grow: 2;
     background-color: rgba(0, 0, 255, 0.2);
+}
+
+ul.spotlight-bullet-points {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
 }
 
 .frontpage-jornalismo-a{
@@ -143,6 +159,10 @@ img{
 
 .headline-a-ul{
     display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+
 }
 
 .headline-b{
@@ -160,11 +180,3 @@ img{
     background-color: rgba(145, 30, 180, 0.2);
 }
 
-
-ul.spotlight-bullet-points {
-    margin: 0;
-    padding: 0;
-    list-style-position: inside;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 18px;
-}
