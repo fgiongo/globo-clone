@@ -6,118 +6,127 @@ body {
 .container-main{
     display: flex;
     flex-direction: column;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
+    flex-grow: 1;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
+    min-height: 100px;
 }
 
 .header-left{
     display: flex;
     background-color: rgba(128, 128, 128, 0.5);
-    min-width: 200px;
-    min-height: 200px;
+    flex-grow: 1;
 }
 
 .header-center{
     display: flex;
     background-color: rgba(0, 0, 255, 0.5);
-    min-width: 200px;
-    min-height: 200px;
+    flex-grow: 2;
 }
 
 .header-right{
     display: flex;
     background-color: rgba(128, 128, 128, 0.5);
-    min-width: 200px;
-    min-height: 200px;
+    flex-grow: 1;
 }
 
 .horizontal-menu{
     display: flex;
     justify-content: space-between;
+    min-height: 40px;
+    flex-grow: 1;
 }
 
 .horizontal-menu-item{
     display: flex;
-    min-width: 50px;
-    min-height: 50px;
+    flex-grow: 1;
     background-color: rgba(70, 240, 240, 0.5);
 }
 
 .container-frontpage{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    min-height: 600px;
+    flex-grow: 1;
+}
+
+@media screen and (max-width:768px){
+
+    .container-frontpage{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        min-height: 600px;
+        flex-grow: 1;
+    }
 }
 
 .frontpage-row-left{
     display: flex;
     flex-direction: column;
-    min-width: 600px;
     flex-grow: 1;
 }
 
 .frontpage-row-right{
     display: flex;
     justify-content: space-between;
-    min-width: 600px;
     flex-grow: 1;
 }
 
 .frontpage-spotlight{
     display: flex;
-    height: 300px;
+    flex-direction: column;
     margin: 5px 5px 5px 5px;
+    flex-grow: 2;
     background-color: rgba(0, 0, 255, 0.2);
 }
 
 .frontpage-jornalismo-a{
     display: flex;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 .frontpage-jornalismo-b{
     display: flex;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 .frontpage-esporte{
     display: flex;
     flex-direction: column;
-    min-width: 300px;
-    width: 50%;
+    flex-grow: 1;
 }
 
 .frontpage-entretenimento{
     display: flex;
     flex-direction: column;
-    min-width: 300px;
-    width: 50%;
+    flex-grow: 1;
 }
 
 .headline-a{
-    min-height: 200px;
-    min-width: 200px;
+    display: flex;
+    flex-grow: 1;
     margin: 5px 5px 5px 5px;
     background-color: rgba(0, 0, 255, 0.2);
-    width: 33%;
 }
 
 .headline-b{
-    min-height: 150px;
-    min-width: 200px;
+    display: flex;
+    flex-grow: 1;
     margin: 5px 5px 5px 5px;
     background-color: rgba(255, 0, 0, 0.2);
-    width: 33%;
 }
 
 .headline-c{
-    min-height: 300px;
-    min-width: 300px;
+    display: flex;
+    flex-grow: 1;
     margin: 5px 5px 5px 5px;
     background-color: rgba(145, 30, 180, 0.2);
 }
