@@ -1,1 +1,0 @@
-<img src="stock-photos/pexels-aloïs-moubax-2348817.jpg">

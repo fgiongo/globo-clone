@@ -127,30 +127,6 @@ ul.spotlight-bullet-points {
     background-color: rgba(0, 0, 255, 0.2);
 }
 
-.headline-a-img {
-    display: flex;
-    width: 300px;
-    height: 100px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.headline-a-eyebrow {
-    display: flex;
-}
-
-.headline-a-text{
-    display: flex;
-}
-
-.headline-a-ul{
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style-position: inside;
-
-}
-
 .headline-b{
     display: flex;
     flex-direction: column;
@@ -160,7 +136,33 @@ ul.spotlight-bullet-points {
 
 .headline-c{
     display: flex;
+    flex-direction: column;
     margin: 5px 5px 5px 5px;
     background-color: rgba(145, 30, 180, 0.2);
 }
+
+.headline-img {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.headline-eyebrow {
+    display: flex;
+}
+
+.headline-text{
+    display: flex;
+}
+
+.headline-ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+
+}
+
 

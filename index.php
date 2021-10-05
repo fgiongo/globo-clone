@@ -80,8 +80,8 @@
             <?php include 'includes/headline-c-2.php' ?>
           </div>
 
-          <div class="headline-c">
-            <?php include 'includes/headline-c-3.php' ?>
+          <div class="headline-b">
+            <?php include 'includes/headline-b-4.php' ?>
           </div>
 
         </div>
@@ -94,8 +94,8 @@
             <?php include 'includes/headline-c-5.php' ?>
           </div>
 
-          <div class="headline-c">
-            <?php include 'includes/headline-c-6.php' ?>
+          <div class="headline-b">
+            <?php include 'includes/headline-b-5.php' ?>
           </div>
 
         </div>
