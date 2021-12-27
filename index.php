@@ -198,7 +198,7 @@
 function displayHeader(){
   if(isViewportAtTop()){
     console.log('full-size header');
-    displayHeaderAtTop();
+    displayStickyHeader();
   } else if(isScrollingUp()){
     console.log('small-size header');
     displayStickyHeader();
@@ -228,7 +228,7 @@ function displayStickyHeader(){
 }
 
 function isViewportAtTop(){
-  if(window.pageYOffset < 50){
+  if(window.pageYOffset < 200){
     return true;
   }else{
     return false;
