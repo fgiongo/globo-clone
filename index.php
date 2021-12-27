@@ -206,7 +206,7 @@ function displayHeader(){
     console.log('no header');
     displayHeaderAtTop();
   }
-  console.log('viewport is at '+ window.visualViewport.pageTop);
+  console.log('viewport is at '+ window.pageYOffset);
 }
 
 function displayHeaderAtTop(){
@@ -228,7 +228,7 @@ function displayStickyHeader(){
 }
 
 function isViewportAtTop(){
-  if(window.visualViewport.pageTop < 50){
+  if(window.pageYOffset < 50){
     return true;
   }else{
     return false;
@@ -257,10 +257,10 @@ const latestViewportPositions = [];
 latestViewportPositions.length = 10;
 
 function getLatestViewportPositions(){
-  let currentPosition = window.visualViewport.pageTop;
+  let currentPosition = window.pageYOffset;
   latestViewportPositions.push(currentPosition);
 }	
 
-window.visualViewport.addEventListener('scroll', displayHeader);
+window.addEventListener('scroll', displayHeader);
   </script>	
 </html>
