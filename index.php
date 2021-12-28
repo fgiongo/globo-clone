@@ -8,23 +8,26 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
+
     <div class="container-main">
-      <div class="header" id='header'>
-        <div class="header-left">Header Left</div>
-        <div class="header-center">Header Center</div>
-        <div class="header-right">Header Right</div>
-      </div>
-      <div class="horizontal-menu" id='horizontal-menu'>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
-        <div class="horizontal-menu-item">Item</div>
+      <div id='header-box'>
+        <div class="header" id='header'>
+          <div class="header-left">Header Left</div>
+          <div class="header-center">Header Center</div>
+          <div class="header-right">Header Right</div>
+        </div>
+        <div class="horizontal-menu" id='horizontal-menu'>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+          <div class="horizontal-menu-item">Item</div>
+        </div>
       </div>
 
       <div class="container-frontpage">
@@ -195,72 +198,84 @@
     </div>
   </body>
   <script>
-function displayHeader(){
-  if(isViewportAtTop()){
-    console.log('full-size header');
-    displayStickyHeader();
-  } else if(isScrollingUp()){
-    console.log('small-size header');
-    displayStickyHeader();
-  } else{
-    console.log('no header');
-    displayHeaderAtTop();
-  }
-  console.log('viewport is at '+ window.pageYOffset);
-}
 
-function displayHeaderAtTop(){
-  let header = document.getElementById('header');
-  let horizontalMenu = document.getElementById('horizontal-menu');
-  header.style.position = '';
-  header.style.top = '';
-  horizontalMenu.style.position = '';
-  horizontalMenu.style.top = '';
-}
+    let header = document.getElementById('header-box');
 
-function displayStickyHeader(){
-  let header = document.getElementById('header');
-  let horizontalMenu = document.getElementById('horizontal-menu');
-  header.style.position = 'sticky';
-  header.style.top = '0px';
-  horizontalMenu.style.position = 'sticky';
-  horizontalMenu.style.top = '100px';
-}
+    const latestViewportPositions = [];
+    latestViewportPositions.length = 10;
 
-function isViewportAtTop(){
-  if(window.pageYOffset < 200){
-    return true;
-  }else{
-    return false;
-  }
+    function displayHeader(){
+      if(viewportIsAtTop()){
+        displayStickyHeader();
+        console.log('sticking header');
+      } else if(isScrollingUp()){
+        lowerHeader();
+        console.log('lowering header');
+      } else{
+        raiseHeader();
+        console.log('raising header');
+      }
+    }
 
-}
+    function viewportIsAtTop(){
+      if(window.pageYOffset < 200){
+        return true;
+      }else{
+        return false;
+      }
+    }
 
-function isScrollingUp(){
-  getLatestViewportPositions();
-  let lastViewportPosition = latestViewportPositions[
-    latestViewportPositions.length - 1
-  ];
-  let earlierViewportPosition = latestViewportPositions[
-    latestViewportPositions.length - 6
-  ];
-  if(lastViewportPosition < earlierViewportPosition){
-    console.log('Scrolling Up!');
-    return true;
-  } else {
-    console.log('Scrolling Down!');
-    return false;
-  }
-}
+    function displayStickyHeader(){
+      header.style.position = 'sticky';
+      header.style.top = '0px';
+    }
 
-const latestViewportPositions = [];
-latestViewportPositions.length = 10;
+    function isScrollingUp(){
+      getLatestViewportPositions();
+      let lastViewportPosition = latestViewportPositions[
+        latestViewportPositions.length - 1
+      ];
+      let earlierViewportPosition = latestViewportPositions[
+        latestViewportPositions.length - 6
+      ];
+      if(lastViewportPosition < earlierViewportPosition){
+        console.log('Scrolling Up!');
+        return true;
+      } else {
+        console.log('Scrolling Down!');
+        return false;
+      }
+    }
 
-function getLatestViewportPositions(){
-  let currentPosition = window.pageYOffset;
-  latestViewportPositions.push(currentPosition);
-}	
+    function getLatestViewportPositions(){
+      let currentPosition = window.pageYOffset;
+      latestViewportPositions.push(currentPosition);
+    }	
 
-window.addEventListener('scroll', displayHeader);
+    function lowerHeader(){
+      let headerTopStr = header.style.top;
+      let headerTopStrSliced = headerTopStr.slice(0, (headerTopStr.length - 2));
+      let headerTop = parseFloat(headerTopStrSliced);
+      if(headerTop < 0){
+        let newHeaderTop = headerTop + 10;
+        let newHeaderTopStr = newHeaderTop.toString() + 'px';
+        header.style.top = newHeaderTopStr;
+      }
+    }
+
+
+    function raiseHeader(){
+      let headerTopStr = header.style.top;
+      let headerTopStrSliced = headerTopStr.slice(0, (headerTopStr.length - 2));
+      let headerTop = parseFloat(headerTopStrSliced);
+      if(headerTop > -300){
+        let newHeaderTop = headerTop - 10;
+        let newHeaderTopStr = newHeaderTop.toString() + 'px';
+        header.style.top = newHeaderTopStr;
+      }
+    }
+
+    window.addEventListener('scroll', displayHeader);
+
   </script>	
 </html>
