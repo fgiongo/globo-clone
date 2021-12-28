@@ -31,6 +31,18 @@ h3{
     min-height: 100px;
 }
 
+.header-box-raised {
+  position: sticky;
+  top: -300px;
+  transition: top 1s;
+}
+
+.header-box-lowered {
+  position: sticky;
+  top: 0px;
+  transition: top 1s;
+}
+
 .header-left{
     display: flex;
     background-color: rgba(128, 128, 128, 0.5);

@@ -201,81 +201,61 @@
 
     let header = document.getElementById('header-box');
 
-    const latestViewportPositions = [];
-    latestViewportPositions.length = 10;
+const latestViewportPositions = [];
+latestViewportPositions.length = 10;
 
-    function displayHeader(){
-      if(viewportIsAtTop()){
-        displayStickyHeader();
-        console.log('sticking header');
-      } else if(isScrollingUp()){
-        lowerHeader();
-        console.log('lowering header');
-      } else{
-        raiseHeader();
-        console.log('raising header');
-      }
-    }
+function displayHeader(){
+  if(viewportIsAtTop()){
+    lowerHeader();
+  } else if(isScrollingUp()){
+    lowerHeader();
+    console.log('lowering header');
+  } else{
+    raiseHeader();
+    console.log('raising header');
+  }
+}
 
-    function viewportIsAtTop(){
-      if(window.pageYOffset < 200){
-        return true;
-      }else{
-        return false;
-      }
-    }
+function viewportIsAtTop(){
+  if(window.pageYOffset < 200){
+    return true;
+  }else{
+    return false;
+  }
+}
 
-    function displayStickyHeader(){
-      header.style.position = 'sticky';
-      header.style.top = '0px';
-    }
+function lowerHeader(){
+  header.classList.remove('header-box-raised');
+  header.classList.add('header-box-lowered')
+}
 
-    function isScrollingUp(){
-      getLatestViewportPositions();
-      let lastViewportPosition = latestViewportPositions[
-        latestViewportPositions.length - 1
-      ];
-      let earlierViewportPosition = latestViewportPositions[
-        latestViewportPositions.length - 6
-      ];
-      if(lastViewportPosition < earlierViewportPosition){
-        console.log('Scrolling Up!');
-        return true;
-      } else {
-        console.log('Scrolling Down!');
-        return false;
-      }
-    }
+function isScrollingUp(){
+  getLatestViewportPositions();
+  let lastViewportPosition = latestViewportPositions[
+    latestViewportPositions.length - 1
+  ];
+  let earlierViewportPosition = latestViewportPositions[
+    latestViewportPositions.length - 6
+  ];
+  if(lastViewportPosition < earlierViewportPosition){
+    console.log('Scrolling Up!');
+    return true;
+  } else {
+    console.log('Scrolling Down!');
+    return false;
+  }
+}
 
-    function getLatestViewportPositions(){
-      let currentPosition = window.pageYOffset;
-      latestViewportPositions.push(currentPosition);
-    }	
+function getLatestViewportPositions(){
+  let currentPosition = window.pageYOffset;
+  latestViewportPositions.push(currentPosition);
+}	
 
-    function lowerHeader(){
-      let headerTopStr = header.style.top;
-      let headerTopStrSliced = headerTopStr.slice(0, (headerTopStr.length - 2));
-      let headerTop = parseFloat(headerTopStrSliced);
-      if(headerTop < 0){
-        let newHeaderTop = headerTop + 10;
-        let newHeaderTopStr = newHeaderTop.toString() + 'px';
-        header.style.top = newHeaderTopStr;
-      }
-    }
-
-
-    function raiseHeader(){
-      let headerTopStr = header.style.top;
-      let headerTopStrSliced = headerTopStr.slice(0, (headerTopStr.length - 2));
-      let headerTop = parseFloat(headerTopStrSliced);
-      if(headerTop > -300){
-        let newHeaderTop = headerTop - 10;
-        let newHeaderTopStr = newHeaderTop.toString() + 'px';
-        header.style.top = newHeaderTopStr;
-      }
-    }
-
-    window.addEventListener('scroll', displayHeader);
+function raiseHeader(){
+  header.classList.remove('header-box-lowered');
+  header.classList.add('header-box-raised');
+}
+window.addEventListener('scroll', displayHeader);
 
   </script>	
 </html>
